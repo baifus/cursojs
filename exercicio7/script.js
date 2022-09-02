@@ -35,7 +35,7 @@
 
   function finalizar(){
     if(valores.length == 0) {
-      window.alert('Adicione valores antes de finalizar!')
+      window.alert('É necessário inserir valores antes de finalizar!')
     } else{
       let tot = valores.length
       let maior = valores[0]
