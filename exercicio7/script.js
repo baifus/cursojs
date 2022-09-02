@@ -51,7 +51,7 @@
          menor = valores[pos]
     } media = soma / tot
     res.innerHTML = `<p>${tot}!</p>`
-    res.innerHTML += `<p>O maior valor adicionado foi ${maior}!</p>`
+    res.innerHTML += `<p>${maior}!</p>`
     res.innerHTML += `<p>O menor valor adicionado foi ${menor}!</p>`
     res.innerHTML += `<p>A soma dos valores adicionados é ${soma}!</p>`
     res.innerHTML += `<p> A média dos valores digitados é ${media}! </p>`
