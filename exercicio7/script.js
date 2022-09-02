@@ -50,7 +50,7 @@
       if(valores[pos] < menor)   
          menor = valores[pos]
     } media = soma / tot
-    res.innerHTML = `<p>O total de dados recebidos foram ${tot}!</p>`
+    res.innerHTML = `<p>${tot}!</p>`
     res.innerHTML += `<p>O maior valor adicionado foi ${maior}!</p>`
     res.innerHTML += `<p>O menor valor adicionado foi ${menor}!</p>`
     res.innerHTML += `<p>A soma dos valores adicionados é ${soma}!</p>`
