@@ -11,8 +11,8 @@
     }
   }
 
-  function inlista(n, l) {
-    if(l.indexOf(Number(n)) != -1) {
+  function inlista(n, lista) {
+    if(lista.indexOf(Number(n)) != -1) {
         return true
     } else{
         return false
@@ -50,7 +50,7 @@
       if(valores[pos] < menor)   
          menor = valores[pos]
     } media = soma / tot
-    res.innerHTML = `<p>${tot}!</p>`
+    res.innerHTML = `<p>O total de números registrados foi ${tot}!</p>`
     res.innerHTML += `<p>O maior valor que você adicionou foi:${maior}!</p>`
     res.innerHTML += `<p>O menor valor adicionado foi ${menor}!</p>`
     res.innerHTML += `<p>A soma dos valores adicionados é ${soma}!</p>`
