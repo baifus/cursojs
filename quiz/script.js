@@ -23,6 +23,7 @@ let perguntas = [
 let app = {
  start: function(){
     this.Atualpos = 0
+    this.totalPontos = 0
     // refatorei o código
     let alts = document.querySelectorAll('.alternativa');
     alts.forEach((element,index)=>{
@@ -30,9 +31,10 @@ let app = {
        this.ChecaResposta(index);
         })
     })
+    this.atualizaPontos();
     app.mostraquestao(perguntas[this.Atualpos]);
 } ,
-
+    
     mostraquestao: function(q){
         this.Qatual = q;
     //mostrando o titulo
@@ -53,12 +55,19 @@ let app = {
      ChecaResposta: function(user){
             if(this.Qatual.correta == user){
                 console.log('correta')
+                this.totalPontos++;
             } else {
                 console.log('errada')
-                this.proximaperg();
-                this.mostraquestao(perguntas[this.Atualpos]);
+        
             }
+            this.atualizaPontos();
+            this.proximaperg();
+            this.mostraquestao(perguntas[this.Atualpos]);
 
+        }, 
+        atualizaPontos: function(){
+            let scoreDiv = document.getElementById('pontos');
+            scoreDiv.textContent = `Sua pontuação é ${this.totalPontos}`
         }
         
 }
