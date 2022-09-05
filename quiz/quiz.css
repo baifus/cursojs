@@ -1,0 +1,12 @@
+
+body{
+    background-color: rgba(255, 0, 0, 0.616);
+}
+section#sec {
+    background-color: brown;
+    margin: auto;
+    height: 300px;
+    width: 400px;
+    border-radius: 4px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.342);
+}
