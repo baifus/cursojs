@@ -12,11 +12,11 @@ let perguntas = [
 {
     titulo: 'Quantas vezes o Palmeiras foi campeão mundial?',
     alternativas: ['2','0','1','51'] ,
-    correta: 2
+    correta: 1
 },
 {
     titulo: `'Qual clube é conhecido como 'O mais querido'? `,
-    alternativas: ['Flamengo','Palmeiras','barcelona','Corinthians'] ,
+    alternativas: ['Flamengo','Palmeiras','Barcelona','Corinthians'] ,
     correta: 0
 }
 ]
@@ -56,9 +56,10 @@ let app = {
             if(this.Qatual.correta == user){
                 console.log('correta')
                 this.totalPontos++;
+                this.mostraresposta()
             } else {
                 console.log('errada')
-        
+                this.mostraresposta()
             }
             this.atualizaPontos();
             this.proximaperg();
@@ -68,7 +69,28 @@ let app = {
         atualizaPontos: function(){
             let scoreDiv = document.getElementById('pontos');
             scoreDiv.textContent = `Sua pontuação é ${this.totalPontos}`
+        },
+        mostraresposta: function(correto){
+            let resultDiv = document.getElementById("result");
+            let result = ''
+            // formatar como a mensagem será exibida
+            if(correto == true){
+                result = 'Resposta Correta'
+            } else {
+                //obtendo questão atual
+                let pergunta = perguntas[this.Atualpos];
+                // obtendo o índice da resposta correta 
+                let cindice = pergunta.correta
+                // obtendo o txt
+                let ctexto = pergunta.alternativas[cindice]
+                result = `Incorreto! Resposta Correta ${ctexto}`
+
+
+            }
+            resultDiv.textContent = result
+
         }
+       
         
 }
  app.start()
